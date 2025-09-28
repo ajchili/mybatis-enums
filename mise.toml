@@ -1,0 +1,4 @@
+[tools]
+maven = "3.9.11"
+java = "17"
+python = "3.13"
