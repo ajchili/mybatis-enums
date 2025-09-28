@@ -2,3 +2,11 @@
 maven = "3.9.11"
 java = "17"
 python = "3.13"
+
+[tasks.setup]
+run = [
+	"docker compose up -d",
+	"sleep 5", # Wait for the database to be ready
+	"cd database && mise exec python@3.13 -- uv run alembic upgrade head",
+	"cd mybatis-enums && mise exec maven@3.9.11 -- mvn package",
+]
