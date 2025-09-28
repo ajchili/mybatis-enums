@@ -17,7 +17,7 @@ public class App {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         try (SqlSession session = sqlSessionFactory.openSession()) {
             List<Test> tests = session.selectList(
-                    "com.kirinpatel.mybatis_enums.TestMapper.getTestsByVegetable", Vegetable.POTATO);
+                    "com.kirinpatel.mybatis_enums.TestDAO.getTestsByVegetable", Vegetable.POTATO);
             for (Test test : tests) {
                 System.out.println(test.getId() + " " + test.getVegetable());
             }
