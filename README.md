@@ -49,7 +49,6 @@ Caused by: org.postgresql.util.PSQLException: ERROR: invalid input value for enu
      FROM test_schema.test_table
      WHERE enum = #{vegetable, typeHandler=com.kirinpatel.mybatis_enums.VegetableTypeHandler}::test_schema.test_enum
    </select>
-   ``
    ```
 3. Mark the type within the result map
    ```xml
